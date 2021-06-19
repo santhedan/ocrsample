@@ -1,0 +1,19 @@
+{
+  "name": "validateprofiletestscript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "testprofile.js",
+  "dependencies": {
+    "aws-sdk": "^2.931.0",
+    "axios": "^0.21.1",
+    "node-tesseract-ocr": "^2.2.1",
+    "sharp": "^0.28.3",
+    "text-to-image": "^4.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node testprofile.js"
+  },
+  "author": "sanjay dandekar",
+  "license": "ISC"
+}
