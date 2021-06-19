@@ -56,7 +56,7 @@ exports.handler = async (event, context, callback) => {
     if (!profileJsonObj || !profileJsonObj.Body) {
         return {
             statusCode: 500,
-            body: '{"error":"Invalid request"}'
+            body: '{"error":"Invalid request. No profile information exists."}'
         };
     }
     let profileJson = JSON.parse(profileJsonObj.Body);
@@ -74,12 +74,14 @@ exports.handler = async (event, context, callback) => {
     if (!profileImageObj || !profileImageObj.Body) {
         return {
             statusCode: 500,
-            body: '{"error":"Invalid request"}'
+            body: '{"error":"Invalid request. No profile picture exists."}'
         };
     }
 
     console.log(profileImageObj.Body.length);
 
+    // Save the file to /tmp folder on the Lambda VM.
+    // This improves the OCR accuracy.
     fs.writeFileSync("/tmp/modifiedAvatar.jpg", profileImageObj.Body);
 
     // Now read text from the image

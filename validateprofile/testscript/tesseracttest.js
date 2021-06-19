@@ -12,7 +12,7 @@ tesseract
   .recognize("./modifiedAvatar.jpg", config)
   .then((text) => {
     console.log("Result:", text)
-    console.log(text.trim().match("7A1FA05A16"));
+    console.log(text.trim().match("184641"));
   })
   .catch((error) => {
     console.log(error.message)
